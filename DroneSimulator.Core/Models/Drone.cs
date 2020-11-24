@@ -12,5 +12,6 @@ namespace DroneSimulator.Core.Services
         public Boundary Boundary { get; set; }
         public Light Light { get; set; }
         public Horn Horn { get; set; }
+        public string NavigationModule { get; set; }
     }
 }
