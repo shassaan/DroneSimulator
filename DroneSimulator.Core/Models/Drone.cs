@@ -13,5 +13,6 @@ namespace DroneSimulator.Core.Services
         public Light Light { get; set; }
         public Horn Horn { get; set; }
         public string NavigationModule { get; set; }
+        public float CurrentPosition { get; set; }
     }
 }

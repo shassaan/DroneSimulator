@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace DroneSimulator.Core.Models
 {
-    public partial class Light
+    public partial class Engine
     {
-        public void  Flash()
-        {
-         Console.WriteLine("Light Flash");
-        } 
+        public float MaxSpeed { get; } = 0.5f;
+        public float Height { get; } = 2.1f;
     }
 }

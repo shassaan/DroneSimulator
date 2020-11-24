@@ -8,5 +8,10 @@ namespace DroneSimulator.Core.Models
 {
     public partial class Horn
     {
+        public void Alert(int t)
+        {
+            Console.WriteLine("Beeping");
+            Console.Beep(t,t);
+        }
     }
 }
