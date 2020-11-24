@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DroneSimulator.Core.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DroneSimulator.Core.Models
 {
-    public class Horn
+    public class Horn : ISwitchable
     {
-        public bool Switch { get; set; }
+        public bool Switch { get ; set ; }
     }
 }
