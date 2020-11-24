@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DroneSimulator.Core.Services
+namespace DroneSimulator.Core.Models
 {
-    public class Drone:IDrone
+    public class Light
     {
-        
+        public bool Switch { get; set; }
     }
 }
