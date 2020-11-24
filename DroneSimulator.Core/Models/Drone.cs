@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DroneSimulator.Core.Services
 {
-    public class Drone
+    public partial class Drone
     {
         public Boundary Boundary { get; set; }
         public Light Light { get; set; }

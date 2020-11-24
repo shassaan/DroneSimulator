@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DroneSimulator.Core.Models
 {
-    public class Horn : ISwitchable
+    public partial class Horn : ISwitchable
     {
         public bool Switch { get ; set ; }
     }
