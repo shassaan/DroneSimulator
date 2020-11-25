@@ -56,6 +56,7 @@ namespace DroneSimulator.Core.Services
 
         public void ToggleLight()
         {
+            
             throw new NotImplementedException();
         }
     }
