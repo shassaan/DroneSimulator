@@ -10,8 +10,7 @@ namespace DroneSimulator.Core.Services
     {
         void Start(Boundary boundary, string NavigationModule);
         void Restart(Boundary boundary, string NavigationModule);
-        void FlashLights();
-        void ToggleLight();
+        
         void Alert(int t);
         void NavigateHome();
         void ShutDown();
