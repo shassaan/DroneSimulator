@@ -8,5 +8,6 @@ namespace DroneSimulator.Core.Interfaces
 {
     public interface IAlertable
     {
+        void Alert(int t);
     }
 }
