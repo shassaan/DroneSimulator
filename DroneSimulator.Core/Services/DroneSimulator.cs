@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace DroneSimulator.Core.Services
@@ -18,22 +19,37 @@ namespace DroneSimulator.Core.Services
             Drone.Horn.Alert(t);
         }
 
-        public void FlashLights()
+        public async Task FlashLights(CancellationToken cancellationToken)
         {
             if (Drone is null)
                 throw new Exception("Drone is not started yet");
-            Drone.Light.Flash();
+            await Drone.Light.Flash(cancellationToken);
         }
 
         public void Move(int t, float d)
         {
-            throw new NotImplementedException();
+            if(Drone.NavigationModule == DroneConstants.NavigationModules.RAILS)
+            {
+                if (!new float[] { 0, 90, 180, 270, 360 }.Contains(d))
+                    throw new Exception($"Rails module can only travel to {string.Join(",", new float[] { 0, 90, 180, 270, 360 })}");
+                Drone.Move(t, d,
+                (currentPosition) =>
+                {
+                    Console.WriteLine($"Current Position (0,{currentPosition})");
+                });
+
+            }
+            else
+            {
+                Drone.Move(t, d,
+                (currentPosition) =>
+                {
+                    Console.WriteLine($"Current Position (0,{currentPosition})");
+                });
+            }
         }
 
-        public void NavigateHome()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public void Restart(Boundary boundary, string NavigationModule)
         {
@@ -54,10 +70,12 @@ namespace DroneSimulator.Core.Services
             Drone.Light = new Light();
         }
 
-        public void ToggleLight()
+        public async Task ToggleLight(CancellationToken cancellationToken)
         {
             
-            throw new NotImplementedException();
+            if(Drone is null)
+                throw new Exception("Drone is not started yet");
+            await Drone.Light.Toggle(cancellationToken);
         }
     }
 }

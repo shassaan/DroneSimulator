@@ -1,11 +1,12 @@
 ﻿using DroneSimulator.Core.Models;
+using DroneSimulator.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DroneSimulator.Core.Services
+namespace DroneSimulator.Core.Models
 {
     public partial class Drone
     {
